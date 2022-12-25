@@ -10,5 +10,11 @@ const validateCreate = [
         validateResult(req,res,next)
     }
 ]
+const validateforgotpasswordstepone = [
+    check('email').exists().withMessage('Missing param').isEmail().withMessage('Format not correct').not().isEmpty().withMessage('Param is empty'),
+    (req,res,next) => {
+        validateResult(req,res,next)
+    }
+]
 
-module.exports = { validateCreate }
+module.exports = { validateCreate, validateforgotpasswordstepone }
