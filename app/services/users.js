@@ -60,10 +60,19 @@ const deleteUser = async(uuid) => {
     }
 }
 
+const getUserByEmail = async (email) => {
+    return await db.user.findOne({where:{email:email}})
+}
+
+const getUserByPk = async (id) => {
+    return await db.user.findByPk(id)
+}
 module.exports = {
     getUsers,
     getUser,
     createdUser,
     updatedUser,
-    deleteUser
+    deleteUser,
+    getUserByEmail,
+    getUserByPk
 }

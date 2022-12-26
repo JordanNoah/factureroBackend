@@ -40,8 +40,8 @@ const updatedUser = async (req,res) => {
     try {
         const {uuid} = req.params
         const {username, name, email, password} = req.body
-
-        var response = await services.updatedUser(uuid,username, name, email, password)
+        
+        var response = await services.updatedUser(uuid,email,name,username,password)
 
         if (response) {
             res.status(200).send({user:await services.getUser(uuid)});
