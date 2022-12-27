@@ -35,4 +35,10 @@ const getRecoverPasswordByUuid = async (uuid) => {
 const getAllRecoverPasswords = async () => {
     return await db.recover_password.findAll()
 }
-module.exports = {getAllRecoverPasswords,createdRecoverPassword,updatedRecoverPassword,getRecoverPasswordByUuid}
+
+const deleteTicket = async (uuid) => {
+    return await db.recover_password.destroy({
+        where:{uuid:uuid}
+    })
+} 
+module.exports = {deleteTicket,getAllRecoverPasswords,createdRecoverPassword,updatedRecoverPassword,getRecoverPasswordByUuid}

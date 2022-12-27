@@ -7,5 +7,11 @@ const validateCreate = [
         validateResult(req,res,next)
     }
 ]
+const validateRecoverPassword = [
+    check('password').exists().withMessage('Missing param').not().isEmpty().withMessage("Param is empty"),
+    (req,res,next) => {
+        validateResult(req,res,next)
+    }
+]
 
-module.exports = {validateCreate}
+module.exports = {validateCreate,validateRecoverPassword}

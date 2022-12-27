@@ -7,12 +7,12 @@ const {
     updatedPassword
 } = require('../controllers/recoverPassword')
 const {
-    validateCreate
+    validateCreate,validateRecoverPassword
 } = require('../validators/recoverPassword')
 
 router.post('/', validateCreate, createRecoverPassword)
 router.get('/:uuid', getRecoverPassword)
 router.get('/', getRecoverPasswords)
-router.patch('/:uuid',updatedPassword)
+router.patch('/:uuid',validateRecoverPassword,updatedPassword)
 
 module.exports = router
