@@ -4,20 +4,24 @@ module.exports = (db,DataTypes) => {
             type: DataTypes.INTEGER,
             primaryKey: true,
             allowNull: false,
-            autoincrement: true
+            autoIncrement: true
         },
         uuid: {
             type: DataTypes.TEXT,
             allowNull: false
         },
-        BusinessName:{
+        businessName:{
             type: DataTypes.TEXT,
             allowNull: false
         },
-        Tradename:{
+        tradename:{
             type: DataTypes.TEXT,
             allowNull: false
         },
+        ruc:{
+            type: DataTypes.TEXT,
+            allowNull: false    
+        }
     })
     return institution
 }
