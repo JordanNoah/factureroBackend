@@ -1,7 +1,5 @@
-const { v4: uuidv4 } = require('uuid')
 const {httpError} = require('../helpers/handleError')
 const services = require('../services/users')
-const db = require('../models')
 
 const getUsers = async (req,res) =>{
     try{
