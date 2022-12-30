@@ -6,6 +6,8 @@ const {
     createdInstitutions
 } = require('../services/institutions')
 
+const services = require('../services/institutions')
+
 const createInstitutions = async (req, res) => {
     try {
         const{ruc,tradename,businessName} = req.body
@@ -31,21 +33,26 @@ const getInstitutions = async (req, res) => {
         httpError(res, error)
     }
 }
-const updatedInstitutions = async (req, res) => {
+const updateInstitution = async (req, res) => {
     try {
-        var uuid = req.params
-        var {
-            password
-        } = req.body
-        var ticket = getRecoverPasswordByUuid(uuid)
-        console.log(ticket);
+      const {uuid} = req.params
+      const {businessName,tradename,ruc} = req.body
+      var response = await services.updatedInstitution(uuid,businessName,tradename,ruc)
+
+      if(response) {
+        res.status(200).send({user:await services.getInstitution (uuid)})
+      }else{
+        throw new Error(`Error updating institution whit uuid: ${uuid} `)
+      }
+      
     } catch (error) {
-        console.log(error);
+
         httpError(res, error)
     }
 }
 
 module.exports = {
     getInstitutions,
-    createInstitutions
+    createInstitutions,
+    updateInstitution
 }
