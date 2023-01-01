@@ -14,7 +14,7 @@ module.exports = (db,DataTypes) => {
             type: DataTypes.TEXT,
             allowNull: false
         },
-        tradename:{
+        tradeName:{
             type: DataTypes.TEXT,
             allowNull: false
         },

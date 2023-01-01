@@ -1,6 +1,8 @@
 const fs = require('fs')
 const path = require('path')
 const basename = path.basename(__filename);
+const db = require('../models')
+const roles = require('../seeders/roles')
 
 const getAll = async () => {
     var services = []
@@ -17,6 +19,22 @@ const getAll = async () => {
      return services
 }
 
+const initSeeders = async () => {
+    roles.forEach( async (element) => {
+        await db.role.findOrCreate({
+            where:{
+                shortName:element.shortName
+            },
+            defaults:{
+                uuid:element.uuid,
+                name:element.name,
+                shortName:element.shortName
+            }
+        })
+    });
+}
+
 module.exports = {
-    getAll
+    getAll,
+    initSeeders
 }

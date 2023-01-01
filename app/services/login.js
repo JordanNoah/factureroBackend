@@ -7,9 +7,9 @@ const login = async (email,password) => {
     if (!user) throw new Error('User not found')
 
     if (user.password == password){
-        jwt.sign({user}, 'secretkey', {expiresIn: "7d"})
+        return jwt.sign({user}, 'secretkey', {expiresIn: "7d"})
     }else{
-        throw new Error('Password not found')
+        throw new Error('Incorrect password')
     }
 } 
 
