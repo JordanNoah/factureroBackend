@@ -34,6 +34,7 @@ Object.keys(db).forEach(modelName => {
  */
 db.context_user_institution.belongsTo(db.user)
 db.context_user_institution.belongsTo(db.institution)
+db.context_user_institution.belongsTo(db.role)
 db.invoice.belongsTo(db.context_user_institution)
 db.invoice.belongsTo(db.client)
 db.recover_password.belongsTo(db.user)

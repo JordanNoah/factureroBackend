@@ -10,11 +10,11 @@ module.exports = (db,DataTypes) => {
             type: DataTypes.TEXT,
             allowNull: false
         },
-        BusinessName:{
+        businessName:{
             type: DataTypes.TEXT,
             allowNull: false
         },
-        Tradename:{
+        tradeName:{
             type: DataTypes.TEXT,
             allowNull: false
         },

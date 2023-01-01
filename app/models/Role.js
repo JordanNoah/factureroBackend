@@ -1,6 +1,6 @@
 module.exports = (db, DataTypes) => {
-    const product = db.define('product', {
-        id: {
+    const roles = db.define('role',{
+        id:{
             type: DataTypes.INTEGER,
             primaryKey: true,
             allowNull: false,
@@ -9,7 +9,15 @@ module.exports = (db, DataTypes) => {
         uuid: {
             type: DataTypes.TEXT,
             allowNull: false
+        },
+        name:{
+            type: DataTypes.TEXT,
+            allowNull: false
+        },
+        shortName:{
+            type: DataTypes.TEXT,
+            allowNull: false
         }
     })
-    return product
+    return roles
 }
