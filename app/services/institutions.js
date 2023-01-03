@@ -1,5 +1,4 @@
 const { v4: uuidv4} = require('uuid')
-const { UUIDV4 } = require("sequelize")
 const db = require("../models")
 
 const getInstitution = async (uuid) => {
@@ -11,16 +10,16 @@ const getAllInstitutions = async() => {
     return await db.institution.findAll()
 }
 
-const createdInstitutions = async (ruc,businessName,tradename) => {
+const createdInstitutions = async (ruc,businessName,tradeName) => {
     return[institution,create] = await db.institution.findOrCreate({
         where:{
-            ruc:ruc
+            tradeName
         },
         defaults:{
             uuid:uuidv4(),
             ruc,
             businessName,
-            tradename
+            tradeName
         }
     })
 

@@ -20,7 +20,7 @@ module.exports = (db,DataTypes) => {
         },
         ruc:{
             type: DataTypes.TEXT,
-            allowNull: false    
+            allowNull: true    
         }
     })
     return institution
