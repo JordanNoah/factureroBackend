@@ -9,6 +9,18 @@ module.exports = (db, DataTypes) => {
         uuid: {
             type: DataTypes.TEXT,
             allowNull: false
+        },
+        name: {
+            type: DataTypes.TEXT,
+            allowNull: false
+        },
+        shortname: {
+            type: DataTypes.TEXT,
+            allowNull: false
+        },
+        location: {
+            type: DataTypes.TEXT,
+            allowNull: false
         }
     })
     return Branch
