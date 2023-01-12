@@ -4,7 +4,7 @@ module.exports = (db, DataTypes) => {
             type: DataTypes.INTEGER,
             primaryKey: true,
             allowNull: false,
-            autoincrement: true
+            autoIncrement: true
         },
         uuid: {
             type: DataTypes.TEXT,
