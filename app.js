@@ -14,7 +14,7 @@ app.use(express.json())
 app.use('/api/1.0',require('./app/routes'))
 
 db.sequelize.sync({
-    force:true
+    force:false
 }).then(async ()=> {
     await initSeeders()
     app.listen(PORT, () => {
