@@ -38,11 +38,12 @@ db.context_user_institution.belongsTo(db.role)
 db.invoice.belongsTo(db.context_user_institution)
 db.invoice.belongsTo(db.client)
 db.recover_password.belongsTo(db.user)
-db.product.belongsTo(db.user)
+db.product.belongsTo(db.institution)
 db.product_package.belongsTo(db.product)
 db.product_package.belongsTo(db.package)
 db.invoice.belongsTo(db.status_invoice)
 db.branch.belongsTo(db.institution)
+db.package.belongsTo(db.institution)
 
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;
