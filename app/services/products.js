@@ -13,7 +13,8 @@ const createdProduct = async (name, description, brand, institutionId) => {
             uuid: uuidv4(),
             name,
             description,
-            brand
+            brand,
+            institutionId
         }
     })
 }

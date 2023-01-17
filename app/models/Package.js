@@ -4,9 +4,17 @@ module.exports = (db, DataTypes) => {
             type: DataTypes.INTEGER,
             primaryKey: true,
             allowNull: false,
-            autoincrement: true
+            autoIncrement: true
         },
         uuid: {
+            type: DataTypes.TEXT,
+            allowNull: false
+        },
+        name:{
+            type: DataTypes.TEXT,
+            allowNull: false
+        },
+        shortname:{
             type: DataTypes.TEXT,
             allowNull: false
         }
