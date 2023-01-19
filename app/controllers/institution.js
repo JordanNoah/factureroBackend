@@ -5,7 +5,8 @@ const {
     getAllInstitutions,
     createdInstitutions,
     updatedInstitution,
-    getInstitution
+    getInstitution,
+    deletedInstitution
 } = require('../services/institutions')
 
 const { createUserInstitution } = require('../services/account')
@@ -65,8 +66,23 @@ const updateInstitution = async (req, res) => {
     }
 }
 
+const deleteInstitution = async (req,res) =>{
+    try {
+        const {uuid} = req.params
+
+        const response = await deletedInstitution(uuid)
+
+        if (response) res.status(200).json({removed:true,userUuid:uuid});
+        else throw new Error(`Can not remove Institutions with uuid ${uuid}`)
+        
+    } catch (error) {
+        httpError(res,error)
+    }
+}
+
 module.exports = {
     getInstitutions,
     createInstitutions,
-    updateInstitution
+    updateInstitution,
+    deleteInstitution
 }

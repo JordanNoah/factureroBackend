@@ -4,9 +4,33 @@ module.exports = (db, DataTypes) => {
             type: DataTypes.INTEGER,
             primaryKey: true,
             allowNull: false,
-            autoincrement: true
+            autoIncrement: true
         },
         uuid: {
+            type: DataTypes.TEXT,
+            allowNull: false
+        },
+        firtsname:{
+            type: DataTypes.TEXT,
+            allowNull: false
+        },
+        surname:{
+            type: DataTypes.TEXT,
+            allowNull: false
+        },
+        email:{
+            type: DataTypes.TEXT,
+            allowNull: false
+        },
+        identificationNumber:{
+            type: DataTypes.TEXT,
+            allowNull: false
+        },
+        direction:{
+            type: DataTypes.TEXT,
+            allowNull: false
+        },
+        phoneNumber:{
             type: DataTypes.TEXT,
             allowNull: false
         }

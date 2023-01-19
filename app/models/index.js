@@ -43,6 +43,7 @@ db.product_package.belongsTo(db.product)
 db.product_package.belongsTo(db.package)
 db.invoice.belongsTo(db.status_invoice)
 db.branch.belongsTo(db.institution)
+db.client.belongsTo(db.institution)
 
 db.sequelize = sequelize;
 db.Sequelize = Sequelize;

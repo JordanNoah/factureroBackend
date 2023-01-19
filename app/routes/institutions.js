@@ -3,7 +3,8 @@ var router = express.Router()
 var {
     getInstitutions,
     createInstitutions,
-    updateInstitution
+    updateInstitution,
+    deleteInstitution
 } = require("../controllers/institution")
 var {
     validateCreated
@@ -11,5 +12,5 @@ var {
 router.get("/", getInstitutions)
 router.post("/", validateCreated, createInstitutions)
 router.patch('/:uuid',updateInstitution)
-
+router.delete('/:uuid', deleteInstitution)
 module.exports = router
